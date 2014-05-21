@@ -10,6 +10,13 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
+	
+	private App app = null;
+	
+	protected void setUp() {
+		app = new App();
+	}
+	
     /**
      * Create the test case
      *
@@ -33,6 +40,23 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+        assertTrue( app != null);
+    }
+    
+    public void testSet() {
+    	
+    	String n = "John";
+    	app.setName(n);
+    	
+    	assertEquals(n, app.name);
+    }
+    
+    public void testGet(){
+
+    	String n = "Mack";
+    	app.setName(n);
+    	
+    	assertEquals(app.name, app.getName());
+
     }
 }
